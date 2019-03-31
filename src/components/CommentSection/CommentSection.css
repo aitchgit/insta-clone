@@ -1,9 +1,9 @@
-.comment-container {
-    padding: 5px;
+.comment-user {
+    font-weight: 500;
 }
 
 .comment-input {
     border: none !important;
-    padding: 20px !important;
+    padding: 5px !important;
 
 }
