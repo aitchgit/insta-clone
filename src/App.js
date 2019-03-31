@@ -8,15 +8,27 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: dummyData
+      posts: [],
+      filteredPosts: []
     }
   }
 
+  componentDidMount() {
+    this.setState({posts: dummyData})
+  }
+
+  searchPostsHandler = (event) => {
+    this.setState({ filteredPosts: event.target.value })
+  }
+
   render() {
+    const posts = this.state.posts.filter(post => {
+      return post.username.toLowerCase().includes(this.state.filteredPosts)
+    })
     return (
       <div className="App">
-        <SearchBar />
-        <PostContainer postData={this.state.posts} />
+        <SearchBar searchChange={this.searchPostsHandler} />
+        <PostContainer postData={posts} />
       </div>
     );
   }

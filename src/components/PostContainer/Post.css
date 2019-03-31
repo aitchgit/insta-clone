@@ -20,6 +20,11 @@
     margin-left: 10px;
 }
 
+.likes-section {
+    padding-bottom: 0!important;
+    font-weight: 500;
+}
+
 .posts-spacing {
     margin-bottom: 20px;
 }
